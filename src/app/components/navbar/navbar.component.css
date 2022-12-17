@@ -1,0 +1,8 @@
+mat-toolbar {
+background-image:linear-gradient(120deg,skyblue,silver);
+border-bottom: 1px solid white;
+
+}
+p{
+   margin-left: 65px;
+}

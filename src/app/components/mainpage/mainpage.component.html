@@ -1,0 +1,126 @@
+<div class="container-fluid">
+    <div class="row height">
+        <div class="col-md-3">
+            <div class="inner">
+                <input type="text" placeholder="Search Empolyees" aria-label="Number" [(ngModel)]="name" class="input" />
+            </div>
+        </div>
+        <div class="col-md-9 ">
+            <div class="row row-cols-9 " *ngFor="let item of emps1 | search1 : name">
+                <div class="col-5 m-6">
+                    <div class="mcard">
+                        <mat-card class="example-card">
+                            <mat-card-header>
+                                <mat-card-title-group>
+                                    <mat-card-title>{{item.name}}</mat-card-title>
+                                    <mat-card-subtitle>{{item.designation}}</mat-card-subtitle>
+                                    <img mat-card-sm-image
+                                        src="data:image/jpeg;base64,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" />
+                                </mat-card-title-group>
+                            </mat-card-header>
+                            <mat-card-content> </mat-card-content>
+                        </mat-card>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row ">
+                <div class=" cardComp col-4 " *ngFor="let item of emps | search1 : name">
+                    <div class="mcard">
+                        <mat-card class="example-card">
+                            <mat-card-header>
+                                <mat-card-title-group>
+                                    <mat-card-title>{{item.name}}</mat-card-title>
+                                    <mat-card-subtitle>{{item.designation}}</mat-card-subtitle>
+                                    <img mat-card-sm-image src={{item.imageurl}} />
+                                </mat-card-title-group>
+                            </mat-card-header>
+                            <mat-card-content> {{item.manager}} </mat-card-content>
+                        </mat-card>
+                    </div>
+                </div>
+            </div>
+            <form [formGroup]="form">
+                <div cdkDropListGroup>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="mcard">
+                                <div class="example-container">
+
+                                    <div cdkDropList [cdkDropListData]="emps2" class="example-list"
+                                        (cdkDropListDropped)="drop($event)">
+                                        <div class="example-box" *ngFor="let item of emps2 | search1 : name" cdkDrag>
+                                            <mat-card class="example-card">
+                                                <mat-card-header>
+                                                    <mat-card-title-group>
+                                                        <mat-card-title>{{item.name}}</mat-card-title>
+                                                        <mat-card-subtitle>{{item.designation}}</mat-card-subtitle>
+                                                        <img mat-card-sm-image src="{{item.imageurl}}" />
+                                                    </mat-card-title-group>
+                                                </mat-card-header>
+                                                <mat-card-content>{{item.manager}} </mat-card-content>
+                                            </mat-card>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="mcard">
+                                <div class="example-container">
+
+
+                                    <div cdkDropList [cdkDropListData]=" emps3" class="example-list"
+                                        (cdkDropListDropped)="drop($event)">
+                                        <div class="example-box" *ngFor="let item of emps3 | search1 : name" cdkDrag>
+                                            <mat-card class="example-card">
+                                                <mat-card-header>
+                                                    <mat-card-title-group>
+                                                        <mat-card-title>{{item.name}}</mat-card-title>
+                                                        <mat-card-subtitle>{{item.designation}}</mat-card-subtitle>
+                                                        <img mat-card-sm-image src="{{item.imageurl}}" />
+                                                    </mat-card-title-group>
+                                                </mat-card-header>
+                                                <mat-card-content>{{item.manager}} </mat-card-content>
+                                            </mat-card>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="mcard">
+                                <div class="example-container">
+
+
+                                    <div cdkDropList [cdkDropListData]="emps4" class="example-list"
+                                        (cdkDropListDropped)="drop($event)">
+                                        <div class="example-box" *ngFor="let item of emps4 | search1 : name" cdkDrag>
+                                            <mat-card class="example-card">
+                                                <mat-card-header>
+                                                    <mat-card-title-group>
+                                                        <mat-card-title>{{item.name}}</mat-card-title>
+                                                        <mat-card-subtitle>{{item.designation}}</mat-card-subtitle>
+                                                        <img mat-card-sm-image src="{{item.imageurl}}" />
+                                                    </mat-card-title-group>
+                                                </mat-card-header>
+                                                <mat-card-content>{{item.manager}} </mat-card-content>
+                                            </mat-card>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="pre">
+        <pre> <p><b>Joe Linux</b> {{emps2 | json}}</p></pre>
+        <pre><p><b>Linda May</b>{{emps3 | json}}</p></pre>
+        <pre><p><b>Jogn Green</b>{{emps4 | json}}</p></pre>
+    </div>
+</div>
